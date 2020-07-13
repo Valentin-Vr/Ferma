@@ -8,9 +8,9 @@
 class Pig : public Pet
 {
 public:
-    Pig();
+    Pig(){}
 
-    virtual QString talk() {return "hru hru hru"; }
+    virtual QString talk()  {return "hru hru hru";}
 };
 
 #endif // PIG_H

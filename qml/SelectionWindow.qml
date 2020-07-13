@@ -64,7 +64,6 @@ Rectangle {
     function executeButtonEvent(index) {
         switch (index) {
         case 0:
-
             mainLoader.source = "qrc:/AnimalWindow.qml"
             mainLoader.setSource(source, {animalName: "Петушок"})
             break

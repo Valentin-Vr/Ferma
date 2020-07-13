@@ -8,7 +8,7 @@
 class Cow : public Pet
 {
 public:
-    Cow();
+    Cow(){}
 
     virtual QString talk() {return "muuuuu"; }
 };

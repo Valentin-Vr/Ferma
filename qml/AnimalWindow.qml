@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
+import elevons.team 1.0
 
 Rectangle {
     id: animalWindow
@@ -9,6 +10,10 @@ Rectangle {
     width: parent.width
     height: parent.height
     color: "lightyellow"
+
+    Ferma {
+        id: ferma
+    }
 
     Column {
         id: buttonsColumn
@@ -37,7 +42,7 @@ Rectangle {
             text: "Talk"
             font.pixelSize: height * 0.6
             onClicked: {
-
+               animalVoiceText.text = ferma.animalVoice(animalName)
             }
         }
 
@@ -48,11 +53,36 @@ Rectangle {
             color: "transparent"
 
             Text {
-                id: animalVoice
+                id: animalVoiceText
                 anchors.centerIn: parent
                 color: "red"
                 font {
                     pixelSize: parent.height * 0.6
+                }
+            }
+        }
+
+        Button {
+            id: button
+            width: parent.width
+            height: 100
+            text: "Change animal to another"
+            font.pixelSize: height * 0.6
+            onClicked: {
+                button.enabled = false
+                if (animalName === "Мурка") {
+                    animalName = "Хрюша"
+                    animalVoiceText.text = ""
+                } else {
+                    if (animalName === "Петушок") {
+                        animalName = "Мурка"
+                        animalVoiceText.text = ""
+                    } else {
+                        if (animalName === "Хрюша") {
+                            animalName = "Петушок"
+                            animalVoiceText.text = ""
+                        }
+                    }
                 }
             }
         }

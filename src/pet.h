@@ -3,12 +3,16 @@
 
 #include <QObject>
 
-class Pet
+class Pet : public QObject
 {
+    Q_OBJECT
 public:
-    Pet();
+    Pet() {
 
-    virtual QString talk() {return "vai vai vai"; }
+    }
+
+    virtual QString talk() {return "vai vai vai";}
+
 };
 
 #endif // PET_H
